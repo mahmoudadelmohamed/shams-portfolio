@@ -3,15 +3,16 @@ import { getDatabase, onValue, ref } from "firebase/database";
 
 export const initFirebaseApp = () => {
   const firebaseConfig = {
-    apiKey: "AIzaSyAhZhzPpyMeMzT3hDJt3ziCdwZ72y3nW_0",
-    authDomain: "testing-95f9a.firebaseapp.com",
-    databaseURL: "https://testing-95f9a-default-rtdb.firebaseio.com",
-    projectId: "testing-95f9a",
-    storageBucket: "testing-95f9a.appspot.com",
-    messagingSenderId: "943762954382",
-    appId: "1:943762954382:web:1a96cb337a98e67923d1df",
-    measurementId: "G-VQZWH3SXS3"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID
   };
+  console.log(firebaseConfig, 'FIND_ME');
   
   initializeApp(firebaseConfig);
 }

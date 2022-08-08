@@ -1,0 +1,3 @@
+interface TitpeProps {
+  title: string;
+}
