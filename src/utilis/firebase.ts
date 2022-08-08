@@ -12,8 +12,6 @@ export const initFirebaseApp = () => {
     appId: process.env.APP_ID,
     measurementId: process.env.MEASUREMENT_ID
   };
-  console.log(firebaseConfig, 'FIND_ME');
-  
   initializeApp(firebaseConfig);
 }
 
