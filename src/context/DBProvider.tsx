@@ -8,14 +8,14 @@ import {
   watchDB,
 } from "../utilis/firebase";
 import {
-  DBContext,
+  DBContext, DBContextProps,
 } from "./DBContext";
 
 export const DBProvider: React.FC<React.PropsWithChildren> = (props) => {
   const {
     children,
   } = props;
-  const [db, setDB] = useState({});
+  const [db, setDB] = useState({} as DBContextProps);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(false);
