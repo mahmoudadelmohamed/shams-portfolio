@@ -7,13 +7,16 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = (props) => {
   const {
     children,
     title,
+    styles,
   } = props;
   return (
     <section>
       <Title
         title={title}
       />
-      {children}
+      <div style={styles}>
+        {children}
+      </div>
     </section>
   )
 }
