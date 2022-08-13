@@ -29,9 +29,6 @@ export const DBProvider: React.FC<React.PropsWithChildren> = (props) => {
   if (!isLoading) {
     console.log('Loading...', 'FIND_ME');
   }
-  else {
-    console.log(db, 'FIND_ME');
-  }
   return (
     <DBContext.Provider
       value={db}

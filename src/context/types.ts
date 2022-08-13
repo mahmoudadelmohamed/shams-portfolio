@@ -1,14 +1,14 @@
-interface Image {
+export interface Image {
   id: number;
-  images: string;
+  image: string;
 }
-interface LocalGallery {
+export interface LocalGallery {
   id: number;
 };
-interface LocalProjects {
+export interface LocalProjects {
   id: number;
 };
-interface PeopleRecommendMe {
+export interface PeopleRecommendMe {
   description: string;
   imageUrl: string;
   job: string;
