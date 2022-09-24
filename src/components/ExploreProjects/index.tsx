@@ -1,33 +1,32 @@
 import React from "react";
 import { PROJECTS_SECTION_SLIDER_SETTINGS } from "../../constant";
 import { useDB } from "../../hooks/useDB";
+import { useImages } from "../../hooks/useImages";
 import { CardImageSlider } from "../CardImageSlider";
 import { CustomSlider } from "../CustomSlider";
 import { SectionWrapper } from "../SectionWrapper";
 
 export const ExploreProjects: React.FC = () => {
   const db = useDB();
-  let localGalleryImages = db.localGallery?.map((item) => {
-    return db.images[item.id];
-  });
-
+  const images = useImages(db.localProjects);
+  
+  let localGalleryImages = db.localProjects ? images : [];
   return (
     <SectionWrapper
       title={'Title'}
       styles={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center ',
+        margin: '0 24px 0 24px'
+
       }}
     >
 
       <CustomSlider
         settings={PROJECTS_SECTION_SLIDER_SETTINGS}
         styles={{
-          width: '95%',
+          width: '100%',
+         
         }}
       >
-
         {localGalleryImages?.map((item, index) => (
           <CardImageSlider
             item={{ ...item }}

@@ -1,16 +1,42 @@
 import React from "react";
+import { Image, LocalGallery, PeopleRecommendMe } from "../../context/types";
 import { useDB } from "../../hooks/useDB";
+import { useImages } from "../../hooks/useImages";
+import { SectionWrapper } from "../SectionWrapper";
+import './styles.scss'
 
 export const ExploreGallery: React.FC = () => {
   const db = useDB();
-  
-  let exploreGalleryItems = db?.localProjects?.map((item) => {
-    return db.images[item.id - 1];
-  });
-  
+  const images = useImages(db.localGallery);
+  let exploreGalleryItems = db.localGallery ? images : [];
+
+
   return (
-    <div> 
-      Hello World From Ex Gallery CP
-    </div>
+    <SectionWrapper
+      title={'Explore Gallery.'}
+      styles={{
+        margin: '0 24px 0 24px',
+      }}
+    >
+      <main>
+        <section className="flex-grid">
+          {exploreGalleryItems.map((item) => (
+            <div
+              key={item.id}
+              className="col">
+              <img
+                src={item?.image}
+                style={{
+                  width: '100%',
+                  borderRadius: 8,
+                  objectFit: 'contain',
+                }}
+              />
+            </div>
+          ))}
+
+        </section>
+      </main>
+    </SectionWrapper>
   )
 }

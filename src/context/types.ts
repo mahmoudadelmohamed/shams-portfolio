@@ -6,7 +6,7 @@ export interface LocalGallery {
   id: number;
 };
 export interface LocalProjects {
-  id: number;
+  localProjectId: number;
 };
 export interface PeopleRecommendMe {
   description: string;
