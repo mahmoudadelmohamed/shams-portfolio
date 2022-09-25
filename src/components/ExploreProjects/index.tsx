@@ -11,9 +11,10 @@ export const ExploreProjects: React.FC = () => {
   const images = useImages(db.localProjects);
   
   let localGalleryImages = db.localProjects ? images : [];
+  
   return (
     <SectionWrapper
-      title={'Title'}
+      title={'Explore Categories.'}
       styles={{
         margin: '0 24px 0 24px'
 

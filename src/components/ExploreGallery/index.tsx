@@ -1,5 +1,4 @@
 import React from "react";
-import { Image, LocalGallery, PeopleRecommendMe } from "../../context/types";
 import { useDB } from "../../hooks/useDB";
 import { useImages } from "../../hooks/useImages";
 import { SectionWrapper } from "../SectionWrapper";

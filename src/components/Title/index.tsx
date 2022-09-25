@@ -6,6 +6,6 @@ export const Title:React.FC<TitpeProps> = (props) => {
     title,
   } = props
   return (
-    <h1 className="title">{title}</h1>
+    <h1>{title}</h1>
   )
 }
