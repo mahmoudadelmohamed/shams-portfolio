@@ -5,7 +5,6 @@ import { useImages } from "../../hooks/useImages";
 import { CardImageSlider } from "../CardImageSlider";
 import { CustomSlider } from "../CustomSlider";
 import { SectionWrapper } from "../SectionWrapper";
-
 export const ExploreProjects: React.FC = () => {
   const db = useDB();
   const images = useImages(db.localProjects);
@@ -16,7 +15,7 @@ export const ExploreProjects: React.FC = () => {
     <SectionWrapper
       title={'Explore Categories.'}
       styles={{
-        margin: '0 24px 0 24px'
+        margin: '0 75px 0 75px'
 
       }}
     >

@@ -14,7 +14,7 @@ export const ExploreGallery: React.FC = () => {
     <SectionWrapper
       title={'Explore Gallery.'}
       styles={{
-        margin: '0 24px 0 24px',
+        margin: '0 75px 0 75px',
       }}
     >
       <main>

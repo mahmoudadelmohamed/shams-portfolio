@@ -10,3 +10,13 @@ export const PROJECTS_SECTION_SLIDER_SETTINGS: Settings = {
   autoplay: true,
   arrows: false,
 };
+
+export const PEOPLE_RECOMMEND_ME_SECTION_SLIDER_SETTINGS: Settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  arrows: false,
+};
