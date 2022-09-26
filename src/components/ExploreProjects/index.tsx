@@ -14,10 +14,6 @@ export const ExploreProjects: React.FC = () => {
   return (
     <SectionWrapper
       title={'Explore Categories.'}
-      styles={{
-        margin: '0 75px 0 75px'
-
-      }}
     >
 
       <CustomSlider

@@ -15,9 +15,6 @@ export const PeopleRememberedMe: React.FC = () => {
   return (
     <SectionWrapper
       title={'People Remembered Me.'}
-      styles={{
-        margin: '0 75px 0 75px',
-      }}
     >
       <CustomSlider
         settings={PEOPLE_RECOMMEND_ME_SECTION_SLIDER_SETTINGS}

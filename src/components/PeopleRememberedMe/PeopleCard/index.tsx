@@ -1,48 +1,51 @@
 import React from "react";
-import { PeopleRecommendMe } from "../../../context/types";
+import images from "../../../assets";
 import './styles.scss';
+import { PeopleCardProps } from "./types";
 
-interface PeopleCardProps {
-  item: PeopleRecommendMe;
-}
 export const PeopleCard: React.FC<PeopleCardProps> = (props) => {
   const {
-    item
+    item: {
+      description,
+      imageUrl,
+      job,
+      name,
+    }
   } = props;
 
   return (
     <section className="container">
       <div style={{
-        height: 300,
-        backgroundColor: 'greena'
-      }}>
-        <p>{item.description}</p>
-      </div>
-      <div style={{
-        backgroundColor: 'rgba(235, 235, 214, 1)',
-        display: 'flex',
-        borderRadius: 15,
-        alignItems: 'center'
-      }}>
-        <div style={{
-          backgroundColor: 'red',
-          marginTop: 16,
-          marginBottom: 16,
-        }}>
+        paddingLeft: 16,
+        paddingTop: 8
+}}>
+        <div>
           <img
-            src={item.imageUrl}
+            src={imageUrl ? imageUrl : images.placeholder}
             style={{
-              width: 70,
-              height: 70,
-              borderRadius: 35,
-              objectFit: 'contain',
-              backgroundColor: 'gray'
+              width: 180,
+              height: 180,
+              borderRadius: 16,
+              objectFit: "cover"
             }}
-
           />
         </div>
+        <div>
+          <h2>
+            {`“ ${job} ”`}
+          </h2>
+        </div>
+        <div>
+          <h3>
+            {description}
+          </h3>
+        </div>
+        <div>
+          <h4>
+            {name}
+          </h4>
+        </div>
       </div>
-
     </section>
   )
 }

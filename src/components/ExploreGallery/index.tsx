@@ -13,9 +13,6 @@ export const ExploreGallery: React.FC = () => {
   return (
     <SectionWrapper
       title={'Explore Gallery.'}
-      styles={{
-        margin: '0 75px 0 75px',
-      }}
     >
       <main>
         <section className="flex-grid">
