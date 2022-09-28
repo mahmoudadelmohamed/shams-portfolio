@@ -1,3 +1,3 @@
 interface TitpeProps {
-  title: string;
+  title?: string;
 }

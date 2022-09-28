@@ -1,7 +1,6 @@
 @import '../../scss/variables.scss';
 .sliderImage {
   width: 420px;
-  border-radius: 8px;
+  border-radius: $border-radius-sm;
   height: 600;
-  background-color: red;
 }

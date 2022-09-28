@@ -2,7 +2,7 @@
 
 .container {
   width: 90%;
-  border-radius: 8px;
+  border-radius: $border-radius-sm;
   border: 1px solid $surface;
   font-family: $regular;
   padding: 8px;
@@ -10,5 +10,25 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  height: 400px;
+  height: 410px;
+}
+
+.peopleWrapper {
+  padding-left: 16px;
+  padding-top: 8px;
+}
+
+.peopleImage {
+  width: 180px;
+  height: 180px;
+  border-radius: $border-radius-lg;
+  object-fit: cover;
+}
+
+.detailsWrapper {
+  padding-top: 16px
+}
+
+.descriptionContainer {
+  height: 90px
 }

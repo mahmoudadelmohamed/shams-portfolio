@@ -26,8 +26,8 @@ export const DBProvider: React.FC<React.PropsWithChildren> = (props) => {
       unsubscribe();
     };
   }, [setDB]);
-  if (!isLoading) {
-    console.log('Loading...', 'FIND_ME');
+  if(isLoading === false) {
+    return <div>Loading....</div>
   }
   return (
     <DBContext.Provider

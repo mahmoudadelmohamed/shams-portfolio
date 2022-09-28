@@ -6,6 +6,7 @@ export interface DBContextProps {
   localGallery: LocalGallery[];
   localProjects: LocalProjects[];
   peopleRecommendMe: PeopleRecommendMe[];
+  staticText: any;
 
 }
 export const DBContext = createContext<DBContextProps>({} as DBContextProps);

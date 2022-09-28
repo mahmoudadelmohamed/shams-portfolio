@@ -4,5 +4,5 @@ import {
 } from "react";
 
 export interface SectionWrapperProps extends PropsWithChildren {
-  title: string;
+  title?: string;
 }
