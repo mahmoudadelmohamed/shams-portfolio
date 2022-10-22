@@ -4,9 +4,17 @@ h1 {
   font-size: $large-light;
   font-family: $bold;
 }
-h3 {
-  font-family: $light;
-}
-h1,h2,h3,h4 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $regular;
   color: $primary;
+}
+
+p {
+  font-family: $light;
 }

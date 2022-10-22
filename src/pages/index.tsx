@@ -10,7 +10,6 @@ const IndexPage = () => {
       <HomeWrapper />
       <Footer />
     </DBProvider>
-
   )
 }
 

@@ -8,9 +8,12 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = (props) => {
   const {
     children,
     title,
+    styles,
   } = props;
   return (
-    <section className='wrapper'>
+    <section style={styles}
+      className='wrapper'
+    >
       <Title
         title={title}
       />
