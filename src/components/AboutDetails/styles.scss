@@ -1,0 +1,17 @@
+@import '../../scss/variables.scss';
+
+.aboutSectionContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profileImage {
+  border-radius: $border-radius-lg;
+  width: 800px;
+  height: 100%;
+}
+
+.flexGridWrapper {
+
+}

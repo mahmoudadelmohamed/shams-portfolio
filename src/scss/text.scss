@@ -5,13 +5,16 @@ h1 {
   font-family: $bold;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: $regular;
+  color: $primary;
+}
+h1 {
+  font-family: $bold;
   color: $primary;
 }
 
