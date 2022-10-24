@@ -2,6 +2,14 @@ export interface Image {
   id: number;
   image: string;
 }
+export interface Brand {
+  id: number;
+  brand: string;
+}
+export interface Hobby {
+  id: number;
+  hobby: string;
+}
 export interface LocalGallery {
   id: number;
 };
