@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useMemo } from "react";
+import images from "../../assets";
+import { useDB } from "../../hooks/useDB";
+import { ImageWithFallBack } from "../ImageWithFallBack";
 import './styles.scss';
 
 export const AboutDetails: React.FC = () => {
+  const db = useDB();
+  console.log(db.hobbies, 'FIND_ME', 'HOBBIES');
+  
   return (
-    
     <section className='aboutSectionContainer'>
       <div>
-        <img
+        <ImageWithFallBack
+          url='https://firebasestorage.googleapis.com/v0/b/testing-95f9a.appspot.com/o/shams_1.jpg?alt=media&token=f452ed09-bc52-429d-a467-242df8146c4d'
+          fallBackUrl={images.placeholder}
           className="profileImage"
-          src={'https://firebasestorage.googleapis.com/v0/b/testing-95f9a.appspot.com/o/shams_1.jpg?alt=media&token=f452ed09-bc52-429d-a467-242df8146c4d'}
         />
       </div>
       <div style={{
-        justifyContent: 'center',
-        width: '50%'
+        width: '60%'
       }}>
         <div>
           <h1 style={{
