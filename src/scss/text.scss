@@ -1,23 +1,18 @@
 @import './variables.scss';
 
-h1 {
-  font-size: $large-light;
-  font-family: $bold;
+body {
+  margin: 0;
+  padding: 0;
 }
 
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $regular;
-  color: $primary;
+  line-height: 0 ;
 }
-h1 {
-  font-family: $bold;
-  color: $primary;
-}
-
 p {
-  font-family: $light;
+  line-height: 0;
 }
