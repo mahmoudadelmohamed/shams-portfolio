@@ -10,8 +10,9 @@ export interface Hobby {
   id: number;
   hobby: string;
 }
-export interface LocalGallery {
+export interface Categories {
   id: number;
+  title: string;
 };
 export interface LocalProjects {
   localProjectId: number;
