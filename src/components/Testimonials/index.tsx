@@ -5,7 +5,7 @@ import { CustomSlider } from "../CustomSlider";
 import { SectionWrapper } from "../SectionWrapper";
 import { PeopleCard } from "./PeopleCard";
 
-export const PeopleRememberedMe: React.FC = () => {
+export const Testimonials: React.FC = () => {
   const db = useDB();
 
   let peopleRecommendation = db.peopleRecommendMe ? db.peopleRecommendMe?.map((item) => {

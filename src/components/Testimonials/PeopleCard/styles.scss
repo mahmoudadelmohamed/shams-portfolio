@@ -38,8 +38,7 @@
 .job {
   font-size: 18px;
   font-family: $semi-bold;
-  padding-bottom: 4px;
-  padding-top: 4px;
+  padding: 4px 0 4px 0;
 }
 .description {
   line-height: 1;
@@ -48,6 +47,6 @@
 }
 
 .detailsContainer {
-  margin-left: 16px;
+  margin: 0 16px 0 16px;
   padding-top: 16px;
 }

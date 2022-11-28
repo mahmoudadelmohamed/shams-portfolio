@@ -1,6 +1,6 @@
 import React, { useMemo, } from "react";
 import { useDB } from "../../hooks/useDB";
-import { PeopleRememberedMe } from "../PeopleRememberedMe";
+import { Testimonials } from "../Testimonials";
 import { SectionWrapper } from "../SectionWrapper";
 import { Spinner } from "../Spinner";
 import './styles.scss';
@@ -23,7 +23,7 @@ export const AboutDetails: React.FC = () => {
 
   return (
     <>
-      <PeopleRememberedMe />
+      <Testimonials />
     </>
 
   )
