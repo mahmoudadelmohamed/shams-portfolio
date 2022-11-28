@@ -4,24 +4,21 @@
   width: 90%;
   border-radius: $border-radius-sm;
   border: 1px solid $surface;
-  font-family: $regular;
   padding: 8px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  height: 410px;
+  height: 320px;
 }
 
 .peopleWrapper {
   padding-left: 16px;
   padding-top: 8px;
+  width: 134px;
+  height: 134px;
 }
 
 .peopleImage {
-  width: 180px;
-  height: 180px;
-  border-radius: $border-radius-md;
+  width: 134px;
+  height: 134px;
+  border-radius: $border-radius-sm;
   object-fit: cover;
 }
 
@@ -31,4 +28,26 @@
 
 .descriptionContainer {
   height: 90px
+}
+
+.name {
+  font-size: 24px;
+  font-family: $regular;
+}
+
+.job {
+  font-size: 18px;
+  font-family: $semi-bold;
+  padding-bottom: 8px;
+  padding-top: 2px;
+}
+.description {
+  line-height: 1;
+  font-size: 16px;
+  font-family: $regular;
+}
+
+.detailsContainer {
+  margin-left: 16px;
+  padding-top: 16px;
 }

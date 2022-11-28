@@ -13,7 +13,7 @@ export const PeopleCard: React.FC<PeopleCardProps> = (props) => {
     }
   } = props;
   const recommendedPeoplePic = useMemo(() => imageUrl ? imageUrl : images.placeholder, [imageUrl]);
-  
+
   return (
     <section className="container">
       <div className="peopleWrapper">
@@ -21,16 +21,18 @@ export const PeopleCard: React.FC<PeopleCardProps> = (props) => {
           src={recommendedPeoplePic}
           className="peopleImage"
         />
-        <div className="detailsWrapper">
-          <h2>{job}</h2>
-          <div className="descriptionContainer">
-            <h3>
-              {description}
-            </h3>
-          </div>
-          <h4>{name}</h4>
-        </div>
       </div>
+
+      <div className="detailsContainer">
+        <h2 className="name">{name}</h2>
+        <h2
+          style={{
+            color: '#9A9A9A'
+          }}
+          className="job">{job}</h2>
+        <p className="description">{description}</p>
+      </div>
+
     </section>
   )
 }
