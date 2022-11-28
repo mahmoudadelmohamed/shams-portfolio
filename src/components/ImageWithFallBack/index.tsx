@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import images from "../../assets";
 import {
   ImageWithFallBackProps,
@@ -8,10 +8,14 @@ export const ImageWithFallBack: React.FC<React.ImgHTMLAttributes<HTMLImageElemen
   const {
     url
   } = props;
+
+  const [isValidUrl, setIsValidUrl] = useState(true);
+
   return (
     <img
       {...props}
-      src={url ? url : images.placeholder}
+      onError={() => setIsValidUrl(false)}
+      src={isValidUrl && url ? url : images.placeholder}
     />
   )
 }

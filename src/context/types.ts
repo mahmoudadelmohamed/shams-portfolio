@@ -4,7 +4,6 @@ export interface Image {
 }
 export interface Brand {
   id: number;
-  brand: string;
 }
 export interface Hobby {
   id: number;
