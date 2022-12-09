@@ -1,3 +1,4 @@
+import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useMemo } from "react";
 import images from "../../../assets";
 import './styles.scss';
@@ -13,7 +14,7 @@ export const PeopleCard: React.FC<PeopleCardProps> = (props) => {
     }
   } = props;
   const recommendedPeoplePic = useMemo(() => imageUrl ? imageUrl : images.placeholder, [imageUrl]);
-
+  
   return (
     <section className="container">
       <div className="peopleWrapper">

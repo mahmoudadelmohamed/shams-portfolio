@@ -1,20 +1,17 @@
 import React from "react";
 import { PEOPLE_RECOMMEND_ME_SECTION_SLIDER_SETTINGS } from "../../constant";
-import { useDB } from "../../hooks/useDB";
 import { CustomSlider } from "../CustomSlider";
 import { SectionWrapper } from "../SectionWrapper";
 import { PeopleCard } from "./PeopleCard";
+import { TestimonialProps } from "./types";
 
-export const Testimonials: React.FC = () => {
-  const db = useDB();
-
-  let peopleRecommendation = db.peopleRecommendMe ? db.peopleRecommendMe?.map((item) => {
-    return item;
-  }) : [];
-
+export const Testimonials: React.FC<TestimonialProps> = (props) => {
+  const { peopleRecommendation } = props;
+  
   return (
     <SectionWrapper
       title={'Testimonials'}
+      withTitle={true}
     >
       <CustomSlider
         settings={PEOPLE_RECOMMEND_ME_SECTION_SLIDER_SETTINGS}
