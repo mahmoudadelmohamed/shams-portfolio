@@ -1,33 +1,37 @@
-import React, { useMemo } from "react";
+import { Link } from "gatsby";
+import React from "react";
 import { ParallaxBanner } from 'react-scroll-parallax';
-import { useDB } from "../../hooks/useDB";
+import { DBContextProps } from "../../context/DBContext";
 import { useImages } from "../../hooks/useImages";
-import { GalleryTunnel } from "../GalleryTunnel";
 import { Spinner } from "../Spinner";
+export interface PageProps {
+  dbValue: DBContextProps;
+}
+export const HomeWrapper: React.FC<PageProps> = (props) => {
+  const { dbValue } = props;
 
-export const HomeWrapper: React.FC = () => {
-  const db = useDB();
+  const categoryImages = useImages(dbValue, dbValue.categories);
 
-  const categories = useMemo(() => db.categories ? db.categories : [], [db.categories]);
-
-  const categoryImages = useImages(db.categories);
-
-  if (categories.length === 0) {
+  if (dbValue.categories.length === 0) {
     return (
-      <Spinner /> 
+      <Spinner />
     )
   }
 
   return (
     <>
-      {/* <GalleryTunnel /> */}
+      <Link
+        to="/about"
+      >
+        <h3>About</h3>
+      </Link>
       {categoryImages.map((item, index) => {
         return (
           <ParallaxBanner
             key={item.id}
             layers={[
               {
-                image: item.image,
+                image: item.iamge,
                 speed: -50,
                 style: {
                   objectFit: 'cover',
@@ -36,22 +40,34 @@ export const HomeWrapper: React.FC = () => {
               },
               {
                 children: (
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                    alignItems: 'center',
-                    height: '65%',
-                    flexDirection: 'column'
-                  }}>
-                    <p style={{
-                      color: '#d3cccc',
-                      
-                    }}>#Featured Campaign</p>
-                    <h1 style={{
-                      color: '#FFF',
-                      letterSpacing: 2,
-                      lineHeight: 0
-                    }}>{categories[index].title} </h1>
+                  <div
+                    onClick={() => console.log('CLICK', 'FIND_ME')}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'flex-end',
+                      alignItems: 'center',
+                      height: '65%',
+                      flexDirection: 'column',
+                    }}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                      cursor: 'pointer'
+                    }}>
+                      <p style={{
+                        color: '#d3cccc',
+                        fontSize: 24
+
+                      }}>#Featured Campaign</p>
+                      <h1 style={{
+                        color: '#FFF',
+                        letterSpacing: 2,
+                        fontSize: 64,
+                      }}>{dbValue.categories[index].title} </h1>
+
+                    </div>
                   </div>
                 )
               }
@@ -62,10 +78,6 @@ export const HomeWrapper: React.FC = () => {
           />
         )
       })}
-
-      {/* <ExploreProjects />
-      <ExploreGallery />
-      <PeopleRememberedMe /> */}
     </>
   )
 }
