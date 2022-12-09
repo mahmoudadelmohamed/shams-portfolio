@@ -22,3 +22,16 @@ export interface PeopleRecommendMe {
   job: string;
   name: string;
 }
+interface Text {
+  HOBBIES: string;
+  JOB_TITLE: string;
+  NAME: string;
+  SYNONYMS: string;
+  SYNONYMS_DESCRIPTION: string;
+  TESTIMONIALS: string;
+  WORKED_WITH: string;
+}
+export interface StaticText {
+  ar: Text;
+  en: Text;
+}

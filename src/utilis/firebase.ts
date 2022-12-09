@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, onValue, ref } from "firebase/database";
+import { getDatabase, onValue, ref, get } from "firebase/database";
 
 export const initFirebaseApp = () => {
   const firebaseConfig = {
@@ -22,4 +22,11 @@ export const watchDB = (cb: any) => {
     let data = snapshot.val();
     cb(data);
   });
+}
+
+export const getDBOnce = async () => {
+  const db = getDatabase();
+  const rootRef = ref(db, '/');
+  const snap = await get(rootRef);
+  return snap.val();
 }

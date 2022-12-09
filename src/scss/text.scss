@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #FFFFFF;
 }
 
 h1,
@@ -15,4 +16,14 @@ h6 {
 }
 p {
   line-height: 0;
+}
+h1 {
+  font-family: $regular;
+}
+h2 {
+  font-family: $light;
+}
+p {
+  font-family: $light;
+
 }
