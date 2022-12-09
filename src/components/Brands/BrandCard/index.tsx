@@ -10,7 +10,7 @@ export const BrandCard: React.FC<BrandCardProps> = (props) => {
   return (
     <section>
       <ImageWithFallBack 
-        url={image}
+        url={image as string}
         style={{
           width: 185,
           height: 185
