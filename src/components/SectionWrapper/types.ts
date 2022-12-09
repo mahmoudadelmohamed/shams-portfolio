@@ -6,4 +6,5 @@ import {
 export interface SectionWrapperProps extends PropsWithChildren {
   title?: string;
   styles?: CSSProperties;
+  withTitle?: boolean;
 }
