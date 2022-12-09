@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "firebase": "^9.9.2",
+    "framer-motion": "^7.6.18",
     "gatsby": "^4.20.0",
     "gatsby-plugin-image": "^2.20.0",
     "gatsby-plugin-sass": "^5.20.0",
