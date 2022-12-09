@@ -1,11 +1,13 @@
-import { Categories, LocalProjects } from './../../context/types';
-import { useDB } from "../useDB";
+import { CompareArray } from './types';
+import { DBContextProps } from "../../context/DBContext";
 
-const isGallery = (images: Categories[] | LocalProjects[]): images is Categories[] => {
-  let localGalleryId = (images as Categories[])?.map((item) => item.id);
-  return localGalleryId !== undefined || localGalleryId !== null;
-}
-export const useImages = (images: Categories[] | LocalProjects[]) => {
-  const db = useDB();
-  return isGallery(images) ? images?.map((item) => db.images[item.id]) : images?.map((item) => db.images[item.localProjectId])
+ export const  useImages = (dbValue: DBContextProps, arr: CompareArray[] ) => {
+    const result = arr.map(item => {
+      let match = dbValue.images.find(image => image.id == item.id);
+        return {
+          id: match?.id,
+          iamge: match?.image
+        }
+    })
+    return result;
 }
