@@ -1,29 +1,17 @@
-import React, { useMemo, } from "react";
-import { useDB } from "../../hooks/useDB";
+import React from "react";
 import { Testimonials } from "../Testimonials";
-import { Spinner } from "../Spinner";
 import './styles.scss';
 import { Brands } from "../Brands";
-export const AboutDetails: React.FC = () => {
+import { Synonyms } from "../Synonyms";
+import { PageProps } from "./types";
 
-  const db = useDB();
-
-  const hobbies = useMemo(() => db.hobbies ? db.hobbies : [], [db.hobbies]);
-
-
-  if (hobbies.length === 0 && hobbies.length === 0) {
-    return (
-      <Spinner
-        size={50}
-        color='#000'
-      />
-    )
-  }
-
+export const AboutDetails: React.FC<PageProps> = (props) => {
+  const { dbValue } = props;
   return (
     <>
-      <Testimonials />
-      <Brands />
+      <Synonyms dbValue={dbValue}/>
+      <Testimonials peopleRecommendation={dbValue.peopleRecommendMe} />
+      <Brands dbValue={dbValue} />
     </>
 
   )
