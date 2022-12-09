@@ -1,7 +1,7 @@
 import React from "react";
 import { ImageWithFallBack } from "../ImageWithFallBack";
 import { SectionWrapper } from "../SectionWrapper";
-import { Hobbies } from "./Hobbies";
+import { ContentDetails } from "./ContentDetails";
 import './styles.sass';
 import { SynonymsDetails } from "./SynonymsDetails";
 import { SynonymsProps } from "./types";
@@ -52,7 +52,7 @@ export const Synonyms: React.FC<SynonymsProps> = (props) => {
           className="equalSpace"
 
         />
-        <Hobbies
+        <ContentDetails
           hobbies={hobbies}
           title={HOBBIES}
         />

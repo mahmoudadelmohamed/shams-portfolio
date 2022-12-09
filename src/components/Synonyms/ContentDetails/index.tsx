@@ -1,7 +1,7 @@
 import React from "react";
 import { HobbiesProps } from "./types";
 import './styles.sass';
-export const Hobbies: React.FC<HobbiesProps> = (props) => {
+export const ContentDetails: React.FC<HobbiesProps> = (props) => {
   const {
     hobbies,
     title,
