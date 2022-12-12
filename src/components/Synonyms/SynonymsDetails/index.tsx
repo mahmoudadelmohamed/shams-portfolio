@@ -10,7 +10,7 @@ export const SynonymsDetails: React.FC<SynonymsDetailsProps> = (props) => {
   return (
     <section className={className}>
       <h1 className="SynonymsDetailsTitle">{title}</h1>
-      <p className="SynonymsDetailsSubtitle">{subTitle}</p>
+      <h2 className="SynonymsDetailsSubtitle">{subTitle}</h2>
     </section>
   )
 }

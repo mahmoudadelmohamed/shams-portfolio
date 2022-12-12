@@ -1,13 +1,15 @@
 import { createContext } from "react";
-import { Brand, Hobby, Image, Categories, LocalProjects, PeopleRecommendMe, StaticText } from "./types";
+import { Brand, ExtraRoles, Image, Categories, LocalProjects, PeopleRecommendMe, StaticText } from "./types";
 
 export interface DBContextProps {
   images: Image[];
   categories: Categories[];
-  localProjects: LocalProjects[];
   peopleRecommendMe: PeopleRecommendMe[];
   brands: Brand[];
-  hobbies: Hobby[];
+  hobbies: ExtraRoles[];
+  expectedFromMe: ExtraRoles[];
+  foodProjects: LocalProjects[];
+  productsProjects: LocalProjects[];
   staticText: StaticText;
 }
 export interface PageProps {

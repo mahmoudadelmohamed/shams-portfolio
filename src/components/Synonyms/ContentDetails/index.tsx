@@ -1,9 +1,9 @@
 import React from "react";
-import { HobbiesProps } from "./types";
+import { ContentDetailsProps } from "./types";
 import './styles.sass';
-export const ContentDetails: React.FC<HobbiesProps> = (props) => {
+export const ContentDetails: React.FC<ContentDetailsProps> = (props) => {
   const {
-    hobbies,
+    role,
     title,
   } = props;
 
@@ -11,9 +11,9 @@ export const ContentDetails: React.FC<HobbiesProps> = (props) => {
     <section className="hobbiesWrapper">
       <h1 className="hobbiesTitle">{title}</h1>
       <div className="hobbiesContainer">
-        {hobbies.map((item) => (
+        {role.map((item) => (
           <div key={item.id}>
-            <h1>{item.hobby}</h1>
+            <h2 style={{fontSize: 20, paddingRight: 24}}>{item.title}</h2>
           </div>
         ))}
 

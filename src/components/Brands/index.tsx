@@ -13,7 +13,7 @@ export const Brands: React.FC<BrandsProps> = (props) => {
     dbValue,
   } = props;
   const brandsImages = useImages(dbValue, dbValue.brands);
-  
+
   return (
     <section style={{
       marginTop: 74,
@@ -29,7 +29,7 @@ export const Brands: React.FC<BrandsProps> = (props) => {
             width: '100%',
           }}
         >
-          {brandsImages.map((item, index) => <BrandCard image={item.iamge} key={`${item.id}-${index}`} />)}
+          {brandsImages.map((item, index) => <BrandCard image={item.image} key={`${item.id}-${index}`} />)}
         </CustomSlider>
       </SectionWrapper>
 

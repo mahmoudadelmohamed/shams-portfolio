@@ -1,6 +1,6 @@
-import { Hobby } from "../../../context/types";
+import { ExtraRoles } from "../../../context/types";
 
-export interface HobbiesProps {
-  hobbies: Hobby[];
+export interface ContentDetailsProps {
+  role: ExtraRoles[];
   title: string;
 }

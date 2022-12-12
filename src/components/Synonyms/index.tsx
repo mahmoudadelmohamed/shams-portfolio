@@ -9,6 +9,7 @@ import { SynonymsProps } from "./types";
 export const Synonyms: React.FC<SynonymsProps> = (props) => {
   const {
     dbValue: {
+      expectedFromMe,
       hobbies,
       staticText: {
         en: {
@@ -17,12 +18,12 @@ export const Synonyms: React.FC<SynonymsProps> = (props) => {
           NAME,
           SYNONYMS,
           SYNONYMS_DESCRIPTION,
+          EXPECTED_FROM_ME,
         }
       }
     },
   } = props;
-
-
+  
   return (
     <SectionWrapper
       withTitle={false}
@@ -50,12 +51,23 @@ export const Synonyms: React.FC<SynonymsProps> = (props) => {
           title={SYNONYMS}
           subTitle={SYNONYMS_DESCRIPTION}
           className="equalSpace"
-
         />
-        <ContentDetails
-          hobbies={hobbies}
-          title={HOBBIES}
-        />
+        <div style={{
+          marginTop: 24,
+        }}>
+          <ContentDetails
+            role={expectedFromMe}
+            title={EXPECTED_FROM_ME}
+          />
+        </div>
+        <div style={{
+          marginTop: 40,
+        }}>
+          <ContentDetails
+            role={hobbies}
+            title={HOBBIES}
+          />
+        </div>
       </div>
     </SectionWrapper>
   )

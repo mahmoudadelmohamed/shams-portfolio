@@ -20,18 +20,23 @@ export const HomeWrapper: React.FC<PageProps> = (props) => {
 
   return (
     <>
-      <Link
+      {/* <Link
         to="/about"
       >
         <h3>About</h3>
       </Link>
+      <Link
+        to="/categories/fashion"
+      >
+        <h3>category</h3>
+      </Link> */}
       {categoryImages.map((item, index) => {
         return (
           <ParallaxBanner
             key={item.id}
             layers={[
               {
-                image: item.iamge,
+                image: item.image,
                 speed: -50,
                 style: {
                   objectFit: 'cover',
@@ -41,7 +46,7 @@ export const HomeWrapper: React.FC<PageProps> = (props) => {
               {
                 children: (
                   <div
-                    onClick={() => console.log('CLICK', 'FIND_ME')}
+                    onClick={() => console.log('CLICK', 'FIND_ME', dbValue.categories[index].title)}
                     style={{
                       display: 'flex',
                       justifyContent: 'flex-end',
@@ -61,11 +66,20 @@ export const HomeWrapper: React.FC<PageProps> = (props) => {
                         fontSize: 24
 
                       }}>#Featured Campaign</p>
-                      <h1 style={{
-                        color: '#FFF',
-                        letterSpacing: 2,
-                        fontSize: 64,
-                      }}>{dbValue.categories[index].title} </h1>
+                      <Link
+                        style={{
+                          textDecoration: 'none'
+                        }}
+                        to={`/categories/${dbValue.categories[index].title}`}
+                      >
+                        <h1 style={{
+                          color: '#FFF',
+                          letterSpacing: 2,
+                          fontSize: 64,
+                          textTransform: 'uppercase'
+                        }}>{`- ${dbValue.categories[index].title} -`} </h1>
+
+                      </Link>
 
                     </div>
                   </div>

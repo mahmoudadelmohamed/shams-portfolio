@@ -5,16 +5,17 @@ export interface Image {
 export interface Brand {
   id: number;
 }
-export interface Hobby {
+export interface ExtraRoles {
   id: number;
-  hobby: string;
+  title: string;
 }
 export interface Categories {
   id: number;
   title: string;
 };
 export interface LocalProjects {
-  localProjectId: number;
+  id: number;
+  title: string;
 };
 export interface PeopleRecommendMe {
   description: string;
@@ -30,6 +31,7 @@ interface Text {
   SYNONYMS_DESCRIPTION: string;
   TESTIMONIALS: string;
   WORKED_WITH: string;
+  EXPECTED_FROM_ME: string;
 }
 export interface StaticText {
   ar: Text;
