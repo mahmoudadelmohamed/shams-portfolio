@@ -1,23 +1,20 @@
 import React from 'react';
 import { Projects } from '../components/Projects';
-import { DBContextProps } from '../context/DBContext';
-import { Categories } from '../context/types';
-import { useImages } from '../hooks/useImages';
-
+import { LocalProjects, } from '../context/types';
 interface CategoryProps {
   pageContext: {
-    category: Categories;
-    dbValue: DBContextProps
+    categoryTitle: string;
+    projects: LocalProjects[]
   };
 }
 
 export const Category = (props: CategoryProps) => {
-  const { pageContext: { category, dbValue } } = props;
-  const projectsImages = useImages(dbValue, dbValue.foodProjects);
-
+  const { pageContext: { projects, categoryTitle } } = props;
+  const filterProjects = projects.filter((project) => (project.category === categoryTitle));
+  
   return (
-    <Projects
-      dbValue={dbValue}
+    <Projects 
+      projects={filterProjects}
     />
   )
 }
