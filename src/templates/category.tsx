@@ -1,16 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Projects } from '../components/Projects';
-import { LocalProjects, } from '../context/types';
-interface CategoryProps {
-  pageContext: {
-    categoryTitle: string;
-    projects: LocalProjects[]
-  };
-}
+import { CategoryProps } from './types';
 
 export const Category = (props: CategoryProps) => {
   const { pageContext: { projects, categoryTitle } } = props;
-  const filterProjects = projects.filter((project) => (project.category === categoryTitle));
+  const filterProjects = useMemo(() => projects.filter((project) => (project.category === categoryTitle)), [projects, categoryTitle]) ;
   
   return (
     <Projects 
