@@ -28,11 +28,18 @@ export const createPages: GatsbyNode['createPages'] = async function ({ actions 
     component: path.resolve('./src/templates/404.tsx'),
     context: { dbValue },
   });
-  actions.createPage({
-    path: 'projectDetails',
-    component: path.resolve('./src/templates/projectDetails.tsx'),
-    context: { dbValue },
-  });
+
+  dbValue.projects.forEach((project,) => {
+    actions.createPage({
+      path: `/projectDetails/${project.id}`,
+      component: path.resolve('./src/templates/projectDetails.tsx'),
+      context: { 
+        projectImages: project.images,
+        images: dbValue.images,
+       },
+    });
+  })
+
   dbValue.categories.forEach((category) => {
     actions.createPage({
       path: `/categories/${category.title}`,
