@@ -1,10 +1,8 @@
 export interface Image {
   id: number;
-  image: string;
+  image: string ;
 }
-export interface Brand {
-  id: number;
-}
+
 export interface ExtraRoles {
   id: number;
   title: string;
@@ -15,7 +13,11 @@ export interface Categories {
 };
 export interface LocalProjects {
   id: number;
+  thumbnail: string;
   title: string;
+  date: string;
+  category: string;
+  images: number[];
 };
 export interface PeopleRecommendMe {
   description: string;
@@ -36,4 +38,12 @@ interface Text {
 export interface StaticText {
   ar: Text;
   en: Text;
+}
+
+export enum ProjectsCategory {
+  BRAND="brand",
+  FOOD="food",
+  LANDSCAPE="landscape",
+  FASHION="fashion",
+  PRODUCTS="products"
 }
