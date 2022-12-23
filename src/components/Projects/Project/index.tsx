@@ -24,7 +24,7 @@ export const Project: React.FC<ProjectProps> = (props) => {
         />
         <div className="imageOverlay">
           <div className="imageTitle">
-            <h2 className="title" >{title}</h2>
+            <h2 className="projectsTitle" >{title}</h2>
             <h2 className="date"> {date}</h2>
           </div>
         </div>
