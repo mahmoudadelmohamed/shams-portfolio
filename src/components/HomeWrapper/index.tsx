@@ -1,42 +1,20 @@
 import { Link } from "gatsby";
 import React from "react";
 import { ParallaxBanner } from 'react-scroll-parallax';
-import { DBContextProps } from "../../context/DBContext";
-import { useImages } from "../../hooks/useImages";
-import { Spinner } from "../Spinner";
-export interface PageProps {
-  dbValue: DBContextProps;
-}
-export const HomeWrapper: React.FC<PageProps> = (props) => {
-  const { dbValue } = props;
+import { HomeWrapperProps } from "./types";
 
-  const categoryImages = useImages(dbValue, dbValue.categories);
-
-  if (dbValue.categories.length === 0) {
-    return (
-      <Spinner />
-    )
-  }
-
+export const HomeWrapper: React.FC<HomeWrapperProps> = (props) => {
+  const { homeCards = [] } = props;
+  
   return (
     <>
-      {/* <Link
-        to="/about"
-      >
-        <h3>About</h3>
-      </Link>
-      <Link
-        to="/categories/fashion"
-      >
-        <h3>category</h3>
-      </Link> */}
-      {categoryImages.map((item, index) => {
+      {homeCards.map((homeCard) => {
         return (
           <ParallaxBanner
-            key={item.id}
+            key={homeCard.imageId}
             layers={[
               {
-                image: item.image,
+                image: homeCard.image,
                 speed: -50,
                 style: {
                   objectFit: 'cover',
@@ -46,7 +24,6 @@ export const HomeWrapper: React.FC<PageProps> = (props) => {
               {
                 children: (
                   <div
-                    onClick={() => console.log('CLICK', 'FIND_ME', dbValue.categories[index].title)}
                     style={{
                       display: 'flex',
                       justifyContent: 'flex-end',
@@ -70,14 +47,14 @@ export const HomeWrapper: React.FC<PageProps> = (props) => {
                         style={{
                           textDecoration: 'none'
                         }}
-                        to={`/categories/${dbValue.categories[index].title}`}
+                        to={`/categories/${homeCard.title}`}
                       >
                         <h1 style={{
                           color: '#FFF',
                           letterSpacing: 2,
                           fontSize: 64,
                           textTransform: 'uppercase'
-                        }}>{`- ${dbValue.categories[index].title} -`} </h1>
+                        }}>{`- ${homeCard.title} -`} </h1>
 
                       </Link>
 
