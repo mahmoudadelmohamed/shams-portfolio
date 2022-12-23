@@ -1,17 +1,35 @@
 import React from "react";
 import { Testimonials } from "../Testimonials";
 import './styles.scss';
-import { Brands } from "../Brands";
+import { Brands as BrandsImages } from "../Brands";
+import { AboutDetailsProps } from "./types";
 import { Synonyms } from "../Synonyms";
-import { PageProps } from "./types";
 
-export const AboutDetails: React.FC<PageProps> = (props) => {
-  const { dbValue } = props;
+
+export const AboutDetails: React.FC<AboutDetailsProps> = (props) => {
+  const {
+    brands,
+    people,
+    images,
+    expectedFromMe,
+    hobbies,
+    staticText,
+  } = props;
+  
   return (
     <>
-      <Synonyms dbValue={dbValue}/>
-      <Testimonials peopleRecommendation={dbValue.peopleRecommendMe} />
-      <Brands dbValue={dbValue} />
+      <Synonyms
+        expectedFromMe={expectedFromMe}
+        hobbies={hobbies}
+        staticText={staticText}
+      />
+      <Testimonials
+        peopleRecommendation={people}
+      />
+      <BrandsImages
+        brands={brands}
+        images={images}
+      />
     </>
 
   )
