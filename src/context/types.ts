@@ -25,6 +25,9 @@ export interface PeopleRecommendMe {
   job: string;
   name: string;
 }
+export interface Brands {
+  brands: number[];
+}
 interface Text {
   HOBBIES: string;
   JOB_TITLE: string;

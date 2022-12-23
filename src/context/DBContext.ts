@@ -1,20 +1,20 @@
 import { createContext } from "react";
-import { Brand, ExtraRoles, Image, Categories, LocalProjects, PeopleRecommendMe, StaticText } from "./types";
+import { ExtraRoles, Image, Categories, LocalProjects, PeopleRecommendMe, StaticText, Brands } from "./types";
 
 export interface DBContextProps {
   images: Image[];
+  brands: Brands[];
   categories: Categories[];
   peopleRecommendMe: PeopleRecommendMe[];
-  brands: Brand[];
   hobbies: ExtraRoles[];
   expectedFromMe: ExtraRoles[];
-  foodProjects: LocalProjects[];
-  productsProjects: LocalProjects[];
+  projects: LocalProjects[];
   staticText: StaticText;
 }
 export interface PageProps {
   pageContext: {
     dbValue: DBContextProps;
   };
+  path: string;
 }
 export const DBContext = createContext<DBContextProps>({} as DBContextProps);
