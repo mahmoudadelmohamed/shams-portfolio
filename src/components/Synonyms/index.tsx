@@ -8,22 +8,20 @@ import { SynonymsProps } from "./types";
 
 export const Synonyms: React.FC<SynonymsProps> = (props) => {
   const {
-    dbValue: {
-      expectedFromMe,
-      hobbies,
-      staticText: {
-        en: {
-          HOBBIES,
-          JOB_TITLE,
-          NAME,
-          SYNONYMS,
-          SYNONYMS_DESCRIPTION,
-          EXPECTED_FROM_ME,
-        }
+    expectedFromMe,
+    hobbies,
+    staticText: {
+      en: {
+        HOBBIES,
+        JOB_TITLE,
+        NAME,
+        SYNONYMS,
+        SYNONYMS_DESCRIPTION,
+        EXPECTED_FROM_ME,
       }
     },
   } = props;
-  
+
   return (
     <SectionWrapper
       withTitle={false}

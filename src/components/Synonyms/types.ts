@@ -1,5 +1,7 @@
-import { DBContextProps } from "../../context/DBContext";
+import { ExtraRoles, StaticText } from "../../context/types";
 
 export interface SynonymsProps {
-  dbValue: DBContextProps
+  expectedFromMe: ExtraRoles[]
+  hobbies: ExtraRoles[]
+  staticText: StaticText
 }
