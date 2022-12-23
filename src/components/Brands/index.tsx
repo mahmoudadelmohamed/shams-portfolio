@@ -1,5 +1,4 @@
 import React from "react";
-import images from "../../assets";
 import { PROJECTS_SECTION_SLIDER_SETTINGS } from "../../constant";
 import { useImages } from "../../hooks/useImages";
 import { CustomSlider } from "../CustomSlider";
@@ -10,10 +9,11 @@ import { BrandsProps } from "./types";
 
 export const Brands: React.FC<BrandsProps> = (props) => {
   const {
-    dbValue,
+    brands,
+    images,
   } = props;
-  const brandsImages = useImages(dbValue, dbValue.brands);
-
+  const imagesUrls = useImages(images, brands);
+ 
   return (
     <section style={{
       marginTop: 74,
@@ -29,7 +29,7 @@ export const Brands: React.FC<BrandsProps> = (props) => {
             width: '100%',
           }}
         >
-          {brandsImages.map((item, index) => <BrandCard image={item.image} key={`${item.id}-${index}`} />)}
+          {imagesUrls.map((item, index) => <BrandCard image={item?.image} key={`${item}-${index}`} />)}
         </CustomSlider>
       </SectionWrapper>
 

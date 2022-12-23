@@ -1,5 +1,6 @@
-import { DBContextProps } from "../../context/DBContext";
+import { Brands, Image } from "../../context/types";
 
 export interface BrandsProps {
-  dbValue: DBContextProps
+  brands: number[];
+  images: Image[];
 }
