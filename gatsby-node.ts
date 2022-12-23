@@ -10,7 +10,14 @@ export const createPages: GatsbyNode['createPages'] = async function ({ actions 
   actions.createPage({
     path: 'about',
     component: path.resolve('./src/templates/about.tsx'),
-    context: { dbValue },
+    context: {  
+      people: dbValue.peopleRecommendMe,
+      brands: dbValue.brands,
+      images: dbValue.images,
+      expectedFromMe: dbValue.expectedFromMe,
+      hobbies: dbValue.hobbies,
+      staticText: dbValue.staticText
+     },
   });
   actions.createPage({
     path: '/',
