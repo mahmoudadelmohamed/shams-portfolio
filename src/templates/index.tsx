@@ -4,13 +4,13 @@ import { HomeWrapper } from "../components/HomeWrapper"
 import { PageProps } from "../context/DBContext"
 import { DBProvider } from "../context/DBProvider"
 
-const IndexPage: React.FC<PageProps> = (props) => {
-  const {pageContext: {dbValue}} = props
+const IndexPage: React.FC<any> = (props) => {
+  const {pageContext: {homeCards}} = props
 
   return (
     <DBProvider>
       <ParallaxProvider>
-        <HomeWrapper dbValue={dbValue}/>
+        <HomeWrapper homeCards={homeCards}/>
       </ParallaxProvider>
     </DBProvider>
   )
