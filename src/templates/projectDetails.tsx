@@ -11,17 +11,26 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = (props) => {
     }
   } = props;
   const projectImagesUrl = useImages(images, projectImages);
-
+  console.log(projectImagesUrl, 'FIND_ME', 'projectImagesUrl');
+  
   return (
     <>
       {
-        projectImagesUrl.map((imageUrl, index) =>
-          <div key={index}>
-            <img
-              src={imageUrl}
-            />
-          </div>
-
+        projectImagesUrl.map((imageUrl, index) => {
+          return (
+            <div
+              key={index}>
+              <img
+                src={imageUrl?.image}
+                style={{
+                  width: '100%',
+                  height: 1000,
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
+          )
+        }
         )
       }
     </>

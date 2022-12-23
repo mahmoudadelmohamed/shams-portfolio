@@ -1,4 +1,4 @@
-import { Image, LocalProjects } from "../context/types";
+import { Brands, ExtraRoles, Image, LocalProjects, PeopleRecommendMe, StaticText } from "../context/types";
 
 export interface CategoryProps {
   pageContext: {
@@ -12,4 +12,15 @@ export interface ProjectDetailsProps {
     projectImages: number[]
     images: Image[]
   };
+}
+
+export interface AboutProps {
+  pageContext: {
+    people: PeopleRecommendMe[];
+    brands: number[];
+    images: Image[];
+    expectedFromMe: ExtraRoles[]
+    hobbies: ExtraRoles[]
+    staticText: StaticText
+  }
 }
