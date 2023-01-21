@@ -1,6 +1,5 @@
 import React from "react";
 import { AboutDetails } from "../components/AboutDetails";
-import { Header } from "../components/Header";
 import { DBProvider } from "../context/DBProvider";
 import { AboutProps } from "./types";
 
@@ -17,7 +16,6 @@ const About: React.FC<AboutProps> = (props) => {
   } = props;
   return (
     <DBProvider>
-      {/* <Header /> */}
       <AboutDetails
         brands={brands}
         people={people}

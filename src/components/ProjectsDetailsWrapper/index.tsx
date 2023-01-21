@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useImages } from "../../hooks/useImages";
 import { ProjectsDetailsWrapperProps } from "./types";
 import './styles.sass'
-import { Header } from "./Header";
-import { animate, motion, useAnimation, useMotionValue } from 'framer-motion'
+import { motion, useAnimation, useMotionValue } from 'framer-motion'
 import { defaultTrasition } from "../../constant";
 import { ImageModifier } from "./ImageModifier";
-import { Loader } from "../Loader";
+import { ToggleGridCP } from "./ToggleGridCP";
 
 const gridUtils = [1000, 400, 1000, 400];
 export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (props) => {
@@ -34,7 +33,7 @@ export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (pr
     await animation.start(() => ({
       scale: 1,
       transition: defaultTrasition
-    }))
+    }));
     setGridVisible(false);
   };
 
@@ -50,11 +49,7 @@ export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (pr
   }, [])
   return (
     <>
-      {/* <Loader
-        title="Shams"
-        loaderControls={loaderControls}
-      /> */}
-      <Header
+      <ToggleGridCP
         view={gridVisible}
         toggleView={(value) => setGridVisible(value)}
       />
@@ -62,32 +57,34 @@ export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (pr
         <motion.div
           style={{
             backgroundColor: bgColor,
-            transition: 'background-color 1.25s ease-in-out'
+            transition: 'background-color 1.25s ease-in-out',
+            display: 'flex',
+            justifyContent: 'center',
+            height: '100vh',
           }}
-          className="content"
+
         >
           {gridVisible && (
-            <div className="grid-container">
-              <div className="grid-elements">
+            <div
+              className="grid-elements"
+            >
+              {projectImagesUrl.map((image, index) => (
+                <motion.div
+                  key={index}
+                  animate={animation}
+                  custom={index}
+                  className="image-element"
+                >
+                  <div className="thumbnail-wrapper">
+                    <ImageModifier
+                      image={image?.image}
+                      index={index}
+                      className="grid-item-media"
+                    />
+                  </div>
+                </motion.div>
+              ))}
 
-                {projectImagesUrl.map((image, index) => (
-                  <motion.div
-                    key={index}
-                    animate={animation}
-                    custom={index}
-                    className="image-element"
-                  >
-                    <div className="thumbnail-wrapper">
-                      <ImageModifier
-                        image={image?.image}
-                        index={index}
-                        className="grid-item-media"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-
-              </div>
             </div>
           )}
           {!gridVisible && (
