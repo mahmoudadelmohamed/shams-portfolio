@@ -9,7 +9,9 @@ export const ToggleGridCP: React.FC<HeaderProps> = (props) => {
   } = props;
   return (
     <header className="header-container">
-      <button onClick={() => toggleView(!view)}>
+      <button 
+        className="button-header"
+        onClick={() => toggleView(!view)}>
         {!view ? <Grid /> : <Columns />}
       </button>
     </header>

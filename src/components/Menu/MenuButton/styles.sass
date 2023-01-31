@@ -1,0 +1,30 @@
+
+
+.menu-button-wrap 
+  position: fixed
+  left: 10px
+  top: 20px
+  z-index: 11
+  .menu-button
+   cursor: pointer
+   width: 48px
+   height: 48px
+   border: none
+   background-color: transparent
+   span 
+     &::after,
+     &::before
+      content: ''
+      width: 2px
+      height: 48px
+      position: absolute
+      background-color: #111
+      left: 50%
+      top: 50%
+      display: block
+      will-change: transform
+      transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1)
+     &::before
+       transform: translate(-5px, -50%) scale(0.7) rotate(180deg)
+     &::after
+       transform: translate(5px, -50%) scale(0.7) rotate(0)
