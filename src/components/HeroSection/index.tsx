@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import images from "../../assets";
 import { MenuContext } from "../../context/MenuContext";
 import { Menu } from "../Menu";
 import './styles.sass';

@@ -15,7 +15,7 @@ export const AboutDetails: React.FC<AboutDetailsProps> = (props) => {
     hobbies,
     staticText,
   } = props;
-  
+
   return (
     <>
       <Synonyms

@@ -1,4 +1,3 @@
-import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useMemo } from "react";
 import images from "../../../assets";
 import './styles.scss';
