@@ -6,23 +6,33 @@ body {
   background-color: #FFFFFF;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  line-height: 0 ;
+  line-height: 0;
 }
+
 p {
   line-height: 0;
 }
+
 h1 {
   font-family: $light;
 }
+
 h2 {
   font-family: $regular;
 }
+
 p {
   font-family: $regular;
 

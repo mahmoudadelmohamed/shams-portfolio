@@ -90,7 +90,9 @@ export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (pr
           {!gridVisible && (
             <div className="list-container">
               {projectImagesUrl.map((image, index) => (
-                <div className="image-element">
+                <div 
+                key={index}
+                className="image-element">
                   <div className="thumbnail-wrapper">
                     <ImageModifier
                       image={image?.image}

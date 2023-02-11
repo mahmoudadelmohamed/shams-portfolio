@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import images from "../../assets";
 import { MenuContext } from "../../context/MenuContext";
-import { Menu } from "../Menu";
+import { Navbar } from "../Navbar";
 import './styles.sass';
 
 export const HeroSection: React.FC = () => {
@@ -11,8 +10,8 @@ export const HeroSection: React.FC = () => {
     <MenuContext.Provider
       value={{ open, setOpen, }}
     >
-      <Menu />
-      <div className="main-container">
+      <Navbar />
+      <div>
         <h1 style={{
           lineHeight: 1
         }}>Are <br /> you <br /> Ready? </h1>
