@@ -1,7 +1,8 @@
 import { Link } from 'gatsby';
-import React, { SyntheticEvent, useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import images from '../../assets'
-
+import classnames from 'classnames';
+import './styles.sass'
 export const Navbar: React.FC = () => {
   const [startScroll, setStartScroll] = useState(0);
 
@@ -18,44 +19,35 @@ export const Navbar: React.FC = () => {
   }, [handleScroll]);
 
   return (
-    <div style={{
-      position: 'relative',
-    }}>
-      <nav style={{
-        display: 'flex',
-        margin: '8px 24px 8px 24px',
-        alignItems: 'center',
-        flexDirection: 'row',
-        position: 'fixed',
-        top: 0,
-        right: 0,
-        left: 0,
-        zIndex: 10,
-        backgroundColor: startScroll > 0 ? 'red' : ''
-      }}>
+    <div className='navbar-wrapper'>
+      <nav className={classnames({
+        'navbar-start-scroll-bg navbar-container': startScroll,
+        'navbar-container': !startScroll
+      })}>
 
-        <div style={{
-          flex: 1
-        }}>
+        <div className='navbar-content'>
           <img
             src={images.logo}
           />
         </div>
-        <ul style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          width: '50%',
-          textTransform: 'uppercase'
-        }}>
-          <Link to="/">
-            <li>Home</li>
+        <ul className='navbar-links'>
+          <Link
+            className='links'
+            to="/">
+            <li className='links-style'>Home</li>
           </Link>
           <Link
+            className='links'
             to='/about'
           >
             <li>About</li>
           </Link>
-          <li>Facebook</li>
+          <Link
+            className='links'
+            to='/'
+          >
+            <li>Projects</li>
+          </Link>
           <li>instagram</li>
           <li>linkedin</li>
         </ul>
