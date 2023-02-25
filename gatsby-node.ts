@@ -6,6 +6,7 @@ import type { DBContextProps } from './src/context/DBContext';
 export const createPages: GatsbyNode['createPages'] = async function ({ actions }) {
   initFirebaseApp();
   const dbValue: DBContextProps = await getDBOnce();  
+  
   actions.createPage({
     path: 'about',
     component: path.resolve('./src/templates/about.tsx'),
@@ -45,6 +46,14 @@ export const createPages: GatsbyNode['createPages'] = async function ({ actions 
         images: dbValue.images,
        },
     });
+  })
+
+  actions.createPage({
+    path: 'projects',
+    component: path.resolve('./src/templates/allProjects.tsx'),
+    context: {
+      projects: dbValue.projects,
+    }
   })
 
   dbValue.categories.forEach((category) => {

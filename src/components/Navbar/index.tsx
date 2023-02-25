@@ -8,7 +8,6 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
   const {
     links,
   } = props;
-  console.log(links, 'FIND_ME');
 
   return (
     <div className='navbar-wrapper'>
@@ -30,9 +29,7 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
               }
               if (LinkType.INTERNAL === item.linkType) {
                 return (
-                  <Link to={item.link} className='links'>
-                    <li>{item.title}</li>
-                  </Link>
+                  <Link to={item.link} className='links'> <li>{item.title}</li></Link>
                 )
               }
             })

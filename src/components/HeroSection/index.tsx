@@ -7,12 +7,10 @@ export const HeroSection: React.FC<HeroSectionProps> = (props) => {
   const {
     links,
   } = props;
-  
+
   return (
-    <>
-      <Navbar
-        links={links}
-      />
-    </>
+    <Navbar
+      links={links}
+    />
   )
 }

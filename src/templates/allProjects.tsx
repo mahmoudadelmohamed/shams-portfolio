@@ -1,13 +1,14 @@
 import React from "react";
-import { Project } from "../Project";
-import './styles.sass';
-import { ProjectsProps } from "./types";
+import { Project } from "../components/Project";
+import { AllProjectsProps } from "./types";
 
-export const Projects: React.FC<ProjectsProps> = (props) => {
+ 
+const AllProjects: React.FC<AllProjectsProps> = (props) => {
   const {
-    projects = [],
+    pageContext: {
+      projects = [],
+    }
   } = props;
-
   return (
     <section className="imageProjectsSection">
       {
@@ -16,3 +17,4 @@ export const Projects: React.FC<ProjectsProps> = (props) => {
     </section>
   )
 }
+export default AllProjects;

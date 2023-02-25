@@ -1,4 +1,4 @@
-import { LocalProjects } from "../../../context/types";
+import { LocalProjects } from "../../context/types";
 
 export interface ProjectProps {
   project: LocalProjects;
