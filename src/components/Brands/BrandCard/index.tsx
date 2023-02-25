@@ -5,7 +5,7 @@ import { BrandCardProps } from "./types";
 
 export const BrandCard: React.FC<BrandCardProps> = (props) => {
   const {
-    image,
+    image = '',
   } = props;
   return (
     <section>

@@ -1,55 +1,42 @@
 import { Link } from 'gatsby';
-import React, { useCallback, useEffect, useState } from 'react'
-import images from '../../assets'
-import classnames from 'classnames';
-import './styles.sass'
-export const Navbar: React.FC = () => {
-  const [startScroll, setStartScroll] = useState(0);
+import React from 'react'
+import { LinkType } from '../../context/types';
+import './styles.sass';
+import { NavbarProps } from './types';
 
-  const handleScroll = useCallback((e: any) => {
-    const window = e.currentTarget;
-    setStartScroll(window.scrollY);
-  }, [startScroll]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => handleScroll(e));
-    return () => {
-      window.removeEventListener("scroll", (e) => handleScroll(e))
-    }
-  }, [handleScroll]);
+export const Navbar: React.FC<NavbarProps> = (props) => {
+  const {
+    links,
+  } = props;
+  console.log(links, 'FIND_ME');
 
   return (
     <div className='navbar-wrapper'>
-      <nav className={classnames({
-        'navbar-start-scroll-bg navbar-container': startScroll,
-        'navbar-container': !startScroll
-      })}>
+      <nav className='navbar-container'>
 
         <div className='navbar-content'>
-          <img
-            src={images.logo}
-          />
+          <h2 className='logo-font'>
+            Shams Nabil
+          </h2>
         </div>
+
         <ul className='navbar-links'>
-          <Link
-            className='links'
-            to="/">
-            <li className='links-style'>Home</li>
-          </Link>
-          <Link
-            className='links'
-            to='/about'
-          >
-            <li>About</li>
-          </Link>
-          <Link
-            className='links'
-            to='/'
-          >
-            <li>Projects</li>
-          </Link>
-          <li>instagram</li>
-          <li>linkedin</li>
+          {
+            links.map((item) => {
+              if (LinkType.EXTERNAL === item.linkType) {
+                return (
+                  <a key={item.id} className='links' href={item.link} target="_blank"> <li>{item.title}</li> </a>
+                )
+              }
+              if (LinkType.INTERNAL === item.linkType) {
+                return (
+                  <Link to={item.link} className='links'>
+                    <li>{item.title}</li>
+                  </Link>
+                )
+              }
+            })
+          }
         </ul>
       </nav>
     </div>

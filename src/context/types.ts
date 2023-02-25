@@ -25,6 +25,13 @@ export interface PeopleRecommendMe {
   job: string;
   name: string;
 }
+export interface Links {
+  id: number;
+  link: string;
+  title: string;
+  linkType: string;
+}
+
 export interface Brands {
   brands: number[];
 }
@@ -49,4 +56,8 @@ export enum ProjectsCategory {
   LANDSCAPE="landscape",
   FASHION="fashion",
   PRODUCTS="products"
+}
+export enum LinkType {
+  INTERNAL="internal",
+  EXTERNAL="external"
 }

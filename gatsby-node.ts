@@ -1,4 +1,3 @@
-import { Categories } from './src/context/types';
 import type { GatsbyNode } from "gatsby"
 import { initFirebaseApp, getDBOnce } from './src/utilis/firebase';
 import path from 'path';
@@ -6,7 +5,7 @@ import type { DBContextProps } from './src/context/DBContext';
 
 export const createPages: GatsbyNode['createPages'] = async function ({ actions }) {
   initFirebaseApp();
-  const dbValue: DBContextProps = await getDBOnce();
+  const dbValue: DBContextProps = await getDBOnce();  
   actions.createPage({
     path: 'about',
     component: path.resolve('./src/templates/about.tsx'),
@@ -27,7 +26,8 @@ export const createPages: GatsbyNode['createPages'] = async function ({ actions 
         title: category.title,
         image: dbValue.images.find((image) => image.id === category.id)?.image,
         imageId: category.id,
-      }))
+      })),
+      links: dbValue.links,
     },
   });
   actions.createPage({

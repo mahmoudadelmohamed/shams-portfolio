@@ -5,11 +5,13 @@ import { HeroSection } from "../HeroSection";
 import { HomeWrapperProps } from "./types";
 
 export const HomeWrapper: React.FC<HomeWrapperProps> = (props) => {
-  const { homeCards = [] } = props;
+  const { homeCards = [], links } = props;
 
   return (
     <>
-      <HeroSection />
+      <HeroSection 
+        links={links}
+      />
       {homeCards.map((homeCard) => {
         return (
           <ParallaxBanner
