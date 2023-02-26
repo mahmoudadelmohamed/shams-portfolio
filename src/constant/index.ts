@@ -15,7 +15,17 @@ export const PROJECTS_SECTION_SLIDER_SETTINGS: Settings = {
   autoplay: true,
   speed: 1000,
   autoplaySpeed: 1000,
-  cssEase: "linear"
+  cssEase: "linear",
+  responsive: [
+    {
+      breakpoint: 600, 
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1
+      }
+    }
+  ]
 };
 
 export const PEOPLE_RECOMMEND_ME_SECTION_SLIDER_SETTINGS: Settings = {
@@ -26,4 +36,14 @@ export const PEOPLE_RECOMMEND_ME_SECTION_SLIDER_SETTINGS: Settings = {
   slidesToScroll: 1,
   autoplay: true,
   arrows: false,
+  responsive: [
+    {
+      breakpoint: 600, 
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1
+      }
+    }
+  ]
 };

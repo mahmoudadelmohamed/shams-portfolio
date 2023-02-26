@@ -1,7 +1,7 @@
 import React from 'react';
 import { Title } from '../Title';
 import { SectionWrapperProps } from './types';
-import './styles.scss'
+import './styles.sass'
 
 
 export const SectionWrapper: React.FC<SectionWrapperProps> = (props) => {

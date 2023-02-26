@@ -1,10 +1,43 @@
+@import '../../scss/breakpoints'
 
 .synonymsContainer
   margin-left: 68px
   margin-top: 32px
-  display: flex
+  display: block
   justify-content: flex-start
   flex-direction: column
+  @include mobile-screen()
+   margin-left: 0
+   margin-top: 0
+   margin: 16px
+ 
 
 .equalSpace
   margin-top: 16px
+  @include mobile-screen()
+   margin-top: 40px
+
+.profile-image
+  height: 700px
+  border-radius: 8px
+  box-shadow: 26px 26px 52px #c4c4c4,-26px -26px 52px #fff
+  @include mobile-screen()
+   height: 354px
+   margin: 8px
+
+.section-wrapper
+  display: flex
+  margin: 40px 80px
+  @include mobile-screen()
+   flex-direction: column
+   margin: 0
+
+.content-details-wrapper
+  margin-top: 40px
+  @include mobile-screen()
+   margin: 0
+
+.expected-from-me-wrapper
+  margin-top: 24px
+  @include mobile-screen()
+   margin: 0

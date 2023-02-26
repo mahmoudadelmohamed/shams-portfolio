@@ -1,7 +1,8 @@
+@import '../../../scss/breakpoints'
+
 .hobbiesWrapper
   display: flex
   flex-direction: column
-
 
 .hobbiesContainer
   display: flex
@@ -12,3 +13,11 @@
 .hobbiesTitle
   font-size: 32px
   text-transform: uppercase
+  @include mobile-screen()
+   font-size: 24px
+
+.hobby
+  font-size: 20px
+  padding-right: 24px
+  @include mobile-screen()
+   font-size: 14px

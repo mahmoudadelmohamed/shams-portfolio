@@ -1,9 +1,15 @@
 
+@import '../../../scss/breakpoints'
+
 .SynonymsDetailsTitle
   font-size: 40px
   text-transform: uppercase
+  @include mobile-screen()
+   font-size: 24px
 
 .SynonymsDetailsSubtitle
   font-size: 18px
   line-height: 1
+  @include mobile-screen()
+   font-size: 14px
   

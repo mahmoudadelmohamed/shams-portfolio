@@ -13,7 +13,7 @@ export const ContentDetails: React.FC<ContentDetailsProps> = (props) => {
       <div className="hobbiesContainer">
         {role.map((item) => (
           <div key={item.id}>
-            <h2 style={{fontSize: 20, paddingRight: 24}}>{item.title}</h2>
+            <h2 className="hobby">{item.title}</h2>
           </div>
         ))}
 
