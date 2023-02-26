@@ -1,13 +1,19 @@
+@import '../../scss/breakpoints'
+
 .image
   width: 100%
   height: 700px
-  position: relative
+  position: relative 
+  @include mobile-screen()
+   height: 300px
 
 .imageProjectStyle
   width: 100%
   display: block
   height: 700px
   object-fit: cover
+  @include mobile-screen()
+   height: 300px
 
 .imageOverlay
   position: absolute
