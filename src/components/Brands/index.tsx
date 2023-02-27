@@ -27,6 +27,7 @@ export const Brands: React.FC<BrandsProps> = (props) => {
           settings={PROJECTS_SECTION_SLIDER_SETTINGS}
           styles={{
             width: '100%',
+            overflow: 'hidden',
           }}
         >
           {imagesUrls.map((item, index) => <BrandCard image={item?.image} key={`${item}-${index}`} />)}
