@@ -6,9 +6,12 @@ import { motion, useAnimation, useMotionValue } from 'framer-motion'
 import { defaultTrasition } from "../../constant";
 import { ImageModifier } from "./ImageModifier";
 import { ToggleGridCP } from "./ToggleGridCP";
+import { useIsMobile } from "../../hooks/useMobile";
+import { ProjectImagesWithMobile } from "./ProjectImagesWithMobile";
 
 const gridUtils = [1000, 400, 1000, 400];
 export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (props) => {
+  
   const {
     images,
     projectImages,
@@ -19,6 +22,7 @@ export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (pr
   const loaderControls = useAnimation();
   const animation = useAnimation();
   const bgColor = useMotionValue('#000');
+  const isMobile = useIsMobile();
 
   const sequance = async () => {
     await animation.set((index) => ({
@@ -46,7 +50,16 @@ export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (pr
     }, 2000);
 
     sequance();
-  }, [])
+  }, []);
+
+  if(isMobile) {
+    return (
+      <ProjectImagesWithMobile 
+        images={projectImagesUrl}
+      />
+    )
+  }
+
   return (
     <>
       <ToggleGridCP
@@ -57,12 +70,8 @@ export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (pr
         <motion.div
           style={{
             backgroundColor: bgColor,
-            transition: 'background-color 1.25s ease-in-out',
-            display: 'flex',
-            justifyContent: 'center',
-            height: '100vh',
           }}
-
+          className="ground-container"
         >
           {gridVisible && (
             <div
@@ -84,15 +93,14 @@ export const ProjectsDetailsWrapper: React.FC<ProjectsDetailsWrapperProps> = (pr
                   </div>
                 </motion.div>
               ))}
-
             </div>
           )}
           {!gridVisible && (
             <div className="list-container">
               {projectImagesUrl.map((image, index) => (
-                <div 
-                key={index}
-                className="image-element">
+                <div
+                  key={index}
+                  className="image-element">
                   <div className="thumbnail-wrapper">
                     <ImageModifier
                       image={image?.image}
