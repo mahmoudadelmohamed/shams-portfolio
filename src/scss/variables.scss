@@ -22,7 +22,6 @@ $regular-size: 1rem; // 14px
 $button-text: 0.928rem; // 13px
 
 /* ============= Breakpoints ============= */
-$layout-breakpoint-large: 1920px;
-$layout-breakpoint-medium: 1440px;
-$layout-breakpoint-small: 960px;
-$layout-breakpoint-xsmall: 480px;
+$layout-breakpoint-laptop: 1024px;
+$layout-breakpoint-tablet: 768px;
+$layout-breakpoint-mobile: 425px;

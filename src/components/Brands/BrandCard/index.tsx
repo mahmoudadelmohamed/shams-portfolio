@@ -12,8 +12,7 @@ export const BrandCard: React.FC<BrandCardProps> = (props) => {
     <ImageWithFallBack 
       url={image}
       style={{
-        width: `CALC(100% - ${IMAGE_PADDING * 2}px)`,
-        padding: `0px ${IMAGE_PADDING}px`,
+        width: '100%',
       }}
     />
   )
