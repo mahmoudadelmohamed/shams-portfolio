@@ -1,3 +1,3 @@
 export interface ImageWithFallBackProps {
-  url: string;
+  url?: string;
 }

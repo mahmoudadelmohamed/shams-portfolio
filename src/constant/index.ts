@@ -20,9 +20,8 @@ export const PROJECTS_SECTION_SLIDER_SETTINGS: Settings = {
     {
       breakpoint: 600, 
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2
+        slidesToShow: 1,
+        slidesToScroll: 1,
       }
     }
   ]

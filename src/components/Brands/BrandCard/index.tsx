@@ -2,20 +2,19 @@ import React from "react";
 import { ImageWithFallBack } from "../../ImageWithFallBack";
 import { BrandCardProps } from "./types";
 
+const IMAGE_PADDING = 16;
 
 export const BrandCard: React.FC<BrandCardProps> = (props) => {
   const {
-    image = '',
+    image,
   } = props;
   return (
-    <section>
-      <ImageWithFallBack 
-        url={image as string}
-        style={{
-          width: 185,
-          height: 185
-        }}
-      />
-    </section>
+    <ImageWithFallBack 
+      url={image}
+      style={{
+        width: `CALC(100% - ${IMAGE_PADDING * 2}px)`,
+        padding: `0px ${IMAGE_PADDING}px`,
+      }}
+    />
   )
 }
