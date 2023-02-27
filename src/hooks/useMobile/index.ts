@@ -5,7 +5,9 @@ const POS_EXPECTED_WIDTH = 480;
 export const useIsMobile = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const handleWindowSizeChange = () => {
-    setWidth(window.innerWidth);
+    if(typeof window !== 'undefined') {
+      setWidth(window.innerWidth);
+    }
   }
   useEffect(() => {
     window.addEventListener('resize', handleWindowSizeChange);
