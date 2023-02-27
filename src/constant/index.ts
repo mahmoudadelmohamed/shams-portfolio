@@ -41,7 +41,6 @@ export const PEOPLE_RECOMMEND_ME_SECTION_SLIDER_SETTINGS: Settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        initialSlide: 1
       }
     }
   ]
