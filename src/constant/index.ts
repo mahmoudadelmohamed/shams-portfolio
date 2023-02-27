@@ -11,17 +11,17 @@ export const PROJECTS_SECTION_SLIDER_SETTINGS: Settings = {
   dots: false,
   infinite: true,
   slidesToShow: 6,
-  slidesToScroll: 6,
+  slidesToScroll: 1,
   autoplay: true,
   speed: 1000,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 2000,
   cssEase: "linear",
   responsive: [
     {
       breakpoint: 600, 
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
       }
     }
   ]
