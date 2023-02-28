@@ -6,15 +6,17 @@ export const ProjectImagesWithMobile: React.FC<ProjectImagesWithMobileProps> = (
   const {
     images,
   } = props;
-  
+
   return (
     <div className="images-mobile-container">
       <div className="images-mobile-equal-space">
         {images?.map((item) => (
-          <div className="images-mobile-wrapper">
+          <div
+            className="images-mobile-wrapper"
+            key={item?.id}
+          >
             <img
               src={item?.image}
-              key={item?.id}
               className='images-style-mobile'
             />
           </div>

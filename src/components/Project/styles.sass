@@ -1,5 +1,4 @@
 @import '../../scss/breakpoints'
-
 .image
   width: 100%
   height: 700px
@@ -30,7 +29,9 @@
   transition: opacity 0.25s
   &:hover
     opacity: 1
-
+  @include mobile-screen()
+   display: none 
+   
 .imageTitle
   margin-bottom: 32px
   display: flex
