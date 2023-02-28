@@ -3,7 +3,7 @@ import React from "react";
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { HeroSection } from "../HeroSection";
 import { HomeWrapperProps } from "./types";
-
+import './styles.sass'
 export const HomeWrapper: React.FC<HomeWrapperProps> = (props) => {
   const { homeCards = [], links } = props;
 
@@ -21,7 +21,6 @@ export const HomeWrapper: React.FC<HomeWrapperProps> = (props) => {
                 image: homeCard.image,
                 speed: -50,
                 style: {
-                  objectFit: 'cover',
                   width: '100%',
                 }
               },
@@ -45,7 +44,6 @@ export const HomeWrapper: React.FC<HomeWrapperProps> = (props) => {
                       <p style={{
                         color: '#d3cccc',
                         fontSize: 24
-
                       }}>#Featured Campaign</p>
                       <Link
                         style={{
@@ -53,12 +51,7 @@ export const HomeWrapper: React.FC<HomeWrapperProps> = (props) => {
                         }}
                         to={`/categories/${homeCard.title}`}
                       >
-                        <h1 style={{
-                          color: '#FFF',
-                          letterSpacing: 2,
-                          fontSize: 64,
-                          textTransform: 'uppercase'
-                        }}>{`- ${homeCard.title} -`} </h1>
+                        <h1 className="category-title">{`- ${homeCard.title} -`} </h1>
 
                       </Link>
 
