@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const POS_EXPECTED_WIDTH = 480;
 
 export const useIsMobile = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(typeof window !== 'undefined' && window.innerWidth);
   const handleWindowSizeChange = () => {
-    if(typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') {
       setWidth(window.innerWidth);
     }
   }
