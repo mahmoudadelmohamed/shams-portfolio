@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './breakpoints.scss';
 
 body {
   margin: 0;
@@ -20,10 +21,18 @@ h4,
 h5,
 h6 {
   line-height: 0;
+
+  @include laptop-screen() {
+    line-height: 1;
+  }
 }
 
 p {
   line-height: 0;
+
+  @include laptop-screen() {
+    line-height: 1;
+  }
 }
 
 h1 {

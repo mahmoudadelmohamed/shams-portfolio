@@ -10,6 +10,10 @@
    margin-left: 0
    margin-top: 0
    margin: 16px
+  @include tablet-screen()
+   margin-top: 0
+   margin: 16px
+
  
 
 .equalSpace
@@ -28,7 +32,12 @@
 .section-wrapper
   display: flex
   margin: 40px 80px
+  
   @include mobile-screen()
+   flex-direction: column
+   margin: 0
+
+  @include laptop-screen()
    flex-direction: column
    margin: 0
 
